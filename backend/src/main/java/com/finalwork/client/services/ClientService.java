@@ -18,8 +18,6 @@ import com.finalwork.client.exception.DatabaseException;
 import com.finalwork.client.exception.ResourceNotFoundException;
 import com.finalwork.client.repositories.ClientRepository;
 
-import javassist.NotFoundException;
-
 @Service
 public class ClientService {
 
