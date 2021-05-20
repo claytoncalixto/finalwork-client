@@ -1,4 +1,4 @@
-package com.finalwork.client.exceptions;
+package com.finalwork.client.services.exceptions;
 
 public class DatabaseException extends RuntimeException {
 
