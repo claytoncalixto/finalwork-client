@@ -14,8 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.finalwork.client.dto.ClientDTO;
 import com.finalwork.client.entities.Client;
-import com.finalwork.client.exception.DatabaseException;
-import com.finalwork.client.exception.ResourceNotFoundException;
+import com.finalwork.client.exceptions.DatabaseException;
+import com.finalwork.client.exceptions.ResourceNotFoundException;
 import com.finalwork.client.repositories.ClientRepository;
 
 @Service
@@ -33,7 +33,7 @@ public class ClientService {
 	@Transactional(readOnly = true)
 	public ClientDTO findById(Long id) {
 		Optional<Client> obj = clientRepository.findById(id);
-		Client entity = obj.orElseThrow(() -> new ResourceNotFoundException("Client not found"));
+		Client entity = obj.orElseThrow(() -> new EntityNotFoundException("Client not found"));
 		return new ClientDTO(entity);
 	}
 
